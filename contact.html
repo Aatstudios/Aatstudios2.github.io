@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAT STUDIOS | Architectural Excellence</title>
+    <title>Contact Us - AAT STUDIOS | Architectural Excellence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4A2C83; /* 99designs purple */
-            --secondary: #00C2B5; /* 99designs teal */
-            --accent: #FF6B6B; /* Coral accent */
+            --primary: #4A2C83;
+            --secondary: #00C2B5;
+            --accent: #FF6B6B;
             --light: #F8F9FA;
             --dark: #2D3748;
             --gray: #718096;
@@ -103,25 +103,6 @@
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(74, 44, 131, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-        
-        .btn-secondary {
-            background: var(--gradient-teal);
-        }
-        
-        .btn-secondary::before {
-            background: var(--gradient);
         }
         
         /* Enhanced Header */
@@ -254,322 +235,187 @@
             z-index: 2;
         }
         
-        /* Header Animation Elements */
-        .header-decoration {
-            position: absolute;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .decoration-1 {
-            top: -20px;
-            right: 15%;
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--secondary);
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .decoration-2 {
-            bottom: -30px;
-            left: 10%;
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.05;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
-        }
-        
-        /* Hero Section */
-        .hero {
+        /* Page Header */
+        .page-header {
             background: linear-gradient(rgba(74, 44, 131, 0.85), rgba(74, 44, 131, 0.9)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
+            margin-top: 80px;
         }
         
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
+        .page-header-content h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
         
-        .hero p {
+        .page-header-content p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            max-width: 700px;
+            margin: 0 auto;
             opacity: 0.9;
         }
         
-        .hero-badge {
-            display: inline-block;
-            background: var(--gradient-teal);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0, 194, 181, 0.3);
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        /* About Section */
-        .about {
+        /* Contact Section */
+        .contact {
             background: white;
         }
         
-        .about-content {
+        .contact-content {
             display: flex;
-            align-items: center;
             gap: 50px;
         }
         
-        .about-text {
+        .contact-info {
             flex: 1;
         }
         
-        .about-image {
+        .contact-form {
             flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .about-stats {
+        .info-item {
             display: flex;
-            margin-top: 30px;
-            gap: 30px;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .stat-text {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        /* Services Preview */
-        .services-preview {
-            background: var(--light);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            text-align: center;
-            padding: 40px 30px;
+            align-items: flex-start;
+            margin-bottom: 30px;
             cursor: pointer;
-            position: relative;
-            z-index: 1;
-            border-top: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
+        .info-item:hover {
+            background: var(--light);
+            transform: translateX(10px);
         }
         
-        .service-icon {
-            width: 80px;
-            height: 80px;
+        .info-item:hover .info-icon {
+            animation: bounce 0.5s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
             color: white;
-            font-size: 2rem;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
         
-        .service-card h3 {
+        .info-text h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(74, 44, 131, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: var(--light);
+            padding: 0;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--gray);
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
             margin-bottom: 15px;
             color: var(--primary);
         }
         
-        .services-cta {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        /* Projects Preview */
-        .projects-preview {
+        /* FAQ Section */
+        .faq {
             background: white;
         }
         
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
+        .faq-item {
+            margin-bottom: 20px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            cursor: pointer;
         }
         
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
-        }
-        
-        .project-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-info {
+        .faq-question {
             padding: 20px;
-            background: white;
-        }
-        
-        .project-category {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .projects-cta {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            background: var(--gradient);
-            color: white;
-        }
-        
-        .testimonials .section-title h2 {
-            color: white;
-        }
-        
-        .testimonials .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--secondary);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
+            background: var(--light);
+            cursor: pointer;
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
             overflow: hidden;
-            margin-right: 15px;
+            transition: all 0.3s ease;
         }
         
-        .author-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
         }
         
-        .author-info h4 {
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        
-        .author-role {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
         
         /* Footer */
@@ -721,13 +567,8 @@
         
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .about-content,
             .contact-content {
                 flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
             }
         }
         
@@ -772,17 +613,13 @@
                 display: block;
             }
             
-            .header-decoration {
-                display: none;
+            .page-header {
+                height: 50vh;
+                margin-top: 70px;
             }
             
-            .hero h1 {
+            .page-header-content h1 {
                 font-size: 2.2rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
             }
             
             .section {
@@ -803,12 +640,7 @@
         }
         
         @media (max-width: 576px) {
-            .projects-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
+            .page-header-content h1 {
                 font-size: 1.8rem;
             }
             
@@ -840,212 +672,34 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services-preview">Services</a></li>
-                        <li><a href="#projects-preview">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
                         <li><a href="#consultation" class="nav-cta">Get Consultation</a></li>
                     </ul>
                 </nav>
-                
-                <!-- Decorative Elements -->
-                <div class="header-decoration decoration-1"></div>
-                <div class="header-decoration decoration-2"></div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Architectural Excellence Since 2016</span>
-                <h1>Crafted Spaces, Inspired Living</h1>
-                <p>At AAT STUDIOS, we blend creativity, innovation, and functionality to deliver architectural solutions that elevate everyday living.</p>
-                <div class="hero-btns">
-                    <a href="#projects-preview" class="btn">View Our Work</a>
-                    <a href="#contact" class="btn btn-outline">Start a Project</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About AAT Studios</h2>
-                <p>We are passionate about designing spaces that go beyond structure—they tell stories, evoke emotion, and serve purpose.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Shaping Spaces, Elevating Experiences</h3>
-                    <p>At AAT STUDIOS, we are a forward-thinking architectural studio specializing in creating modern, functional, and sustainable environments. Our approach is rooted in curiosity, creativity, and collaboration.</p>
-                    <p>From residential homes to commercial spaces, we combine artistic vision with technical expertise to deliver design solutions that are as practical as they are inspiring.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">7+</div>
-                            <div class="stat-text">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-text">Projects Completed</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">35+</div>
-                            <div class="stat-text">Happy Clients</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About AAT Studios">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section id="services-preview" class="section services-preview">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of architectural and design services to bring your vision to life.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h3>Architecture</h3>
-                    <p>We craft architectural designs that blend innovation, functionality, and aesthetic appeal.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3>3D Animation</h3>
-                    <p>Our realistic 3D visualizations bring your projects to life before construction begins.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>House Planning</h3>
-                    <p>We design well-structured, space-efficient house plans for your lifestyle needs.</p>
-                </div>
-            </div>
-            <div class="services-cta">
-                <a href="services.html" class="btn btn-secondary">View All Services</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Preview -->
-    <section id="projects-preview" class="section projects-preview">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recent Projects</h2>
-                <p>Explore our portfolio of completed projects that showcase our commitment to excellence.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Villa">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Residential</span>
-                        <h3>Modern Villa</h3>
-                        <p>Ikoyi, Lagos State</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Office Complex">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Commercial</span>
-                        <h3>Office Complex</h3>
-                        <p>Victoria Island, Lagos</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Apartment">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-category">Interior Design</span>
-                        <h3>Luxury Apartment</h3>
-                        <p>Lekki, Lagos State</p>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-cta">
-                <a href="projects.html" class="btn">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>What our clients say about working with AAT Studios.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "AAT STUDIOS brought our vision to life with precision and elegance. From 3D animations to interior layouts, their team demonstrated exceptional professionalism."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="James Clinton">
-                        </div>
-                        <div class="author-info">
-                            <h4>James Clinton</h4>
-                            <div class="author-role">Estate Development Client</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Working with AAT STUDIOS was a game changer for our residential project. Their creativity, attention to detail, and modern design approach exceeded our expectations."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah Johnson">
-                        </div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <div class="author-role">Residential Client</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "We needed a complete renovation and AAT STUDIOS delivered beyond what we imagined. Their project management was seamless, and the final result reflects both function and style."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Michael Brown">
-                        </div>
-                        <div class="author-info">
-                            <h4>Michael Brown</h4>
-                            <div class="author-role">Commercial Client</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="page-header-content">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us to discuss your next architectural project. We're here to bring your vision to life.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section class="section contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us to discuss your next architectural project.</p>
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -1086,6 +740,20 @@
                             <p>Saturday: 10am - 4pm</p>
                         </div>
                     </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Social Media</h3>
+                            <p>Connect with us on WhatsApp, Instagram, and LinkedIn</p>
+                            <div class="social-links" style="margin-top: 15px;">
+                                <a href="https://wa.me/2348135657443?text=Hello%20there"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/aat_studios?igsh=MW52MHY1ZzBieWNqNg=="><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/oluwatobiloba-adebumiti-0aa036330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
@@ -1096,13 +764,87 @@
                             <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="tel" class="form-control" placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="">Select Service</option>
+                                <option value="architecture">Architecture</option>
+                                <option value="3d-animation">3D Animation</option>
+                                <option value="house-planning">House Planning</option>
+                                <option value="interior-design">Interior Design</option>
+                                <option value="renovation">Renovation</option>
+                                <option value="construction">Construction</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>Remlec Estate, Lekki Aja, Lagos State</p>
+                    <a href="https://maps.google.com/?q=Remlec+Estate,+Lekki+Aja,+Lagos+State" target="_blank" class="btn" style="margin-top: 15px;">View on Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about working with us.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to get a response after submitting the contact form?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, we recommend calling us directly or reaching out via WhatsApp for a quicker response.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer free consultations?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer complimentary initial consultations to discuss your project scope, requirements, and how we can help bring your vision to life. This initial meeting helps us understand your needs and provide an accurate proposal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What information should I provide when contacting you about a project?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To help us better understand your project, please provide: project location, approximate size/budget, preferred timeline, and any specific requirements or inspiration images. The more details you can share, the better we can assist you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work on projects outside of Lagos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we work on projects throughout Nigeria and internationally. We have experience managing remote projects through regular site visits, digital communication, and collaboration with local professionals when needed.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1124,21 +866,21 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-home"></i><a href="#home">Home</a></li>
-                        <li><i class="fas fa-info-circle"></i><a href="#about">About Us</a></li>
-                        <li><i class="fas fa-concierge-bell"></i><a href="#services-preview">Services</a></li>
-                        <li><i class="fas fa-project-diagram"></i><a href="#projects-preview">Projects</a></li>
-                        <li><i class="fas fa-envelope"></i><a href="#contact">Contact</a></li>
+                        <li><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-info-circle"></i><a href="about.html">About Us</a></li>
+                        <li><i class="fas fa-concierge-bell"></i><a href="services.html">Services</a></li>
+                        <li><i class="fas fa-project-diagram"></i><a href="projects.html">Projects</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-drafting-compass"></i><a href="#services-preview">Architecture</a></li>
-                        <li><i class="fas fa-cube"></i><a href="#services-preview">3D Animation</a></li>
-                        <li><i class="fas fa-home"></i><a href="#services-preview">House Planning</a></li>
-                        <li><i class="fas fa-couch"></i><a href="#services-preview">Interior Design</a></li>
-                        <li><i class="fas fa-hard-hat"></i><a href="#services-preview">Construction</a></li>
+                        <li><i class="fas fa-drafting-compass"></i><a href="services.html">Architecture</a></li>
+                        <li><i class="fas fa-cube"></i><a href="services.html">3D Animation</a></li>
+                        <li><i class="fas fa-home"></i><a href="services.html">House Planning</a></li>
+                        <li><i class="fas fa-couch"></i><a href="services.html">Interior Design</a></li>
+                        <li><i class="fas fa-hard-hat"></i><a href="services.html">Construction</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1211,6 +953,34 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.querySelector('#contactForm input[type="text"]').value;
+            const email = document.querySelector('#contactForm input[type="email"]').value;
+            const phone = document.querySelector('#contactForm input[type="tel"]').value;
+            const service = document.querySelector('#contactForm select').value;
+            const message = document.querySelector('#contactForm textarea').value;
+            
+            // In a real implementation, you would send this data to your server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you for your message, ${name}! We will get back to you soon at ${email}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1226,25 +996,6 @@
                     });
                 }
             });
-        });
-
-        // Contact Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name') || document.querySelector('#contactForm input[type="text"]').value;
-            const email = formData.get('email') || document.querySelector('#contactForm input[type="email"]').value;
-            const subject = formData.get('subject') || document.querySelector('#contactForm input[placeholder="Subject"]').value;
-            const message = formData.get('message') || document.querySelector('#contactForm textarea').value;
-            
-            // In a real implementation, you would send this data to your server
-            // For demonstration, we'll just show an alert
-            alert(`Thank you for your message, ${name}! We will get back to you soon at ${email}.`);
-            
-            // Reset form
-            this.reset();
         });
     </script>
 </body>
