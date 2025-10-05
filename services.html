@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - AAT STUDIOS | Architectural Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4A2C83;
+            --secondary: #00C2B5;
+            --accent: #FF6B6B;
+            --light: #F8F9FA;
+            --dark: #2D3748;
+            --gray: #718096;
+            --gradient: linear-gradient(135deg, #4A2C83 0%, #6B46C1 100%);
+            --gradient-teal: linear-gradient(135deg, #00C2B5 0%, #00D4B8 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(74, 44, 131, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-teal);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 44, 131, 0.3);
+        }
+        
+        /* Enhanced Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            margin-left: 5px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(74, 44, 131, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            position: relative;
+            text-decoration: none;
+            color: var(--dark);
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 44, 131, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-teal);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .nav-cta:hover::before {
+            left: 0;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 44, 131, 0.3);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            z-index: 2;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(74, 44, 131, 0.85), rgba(74, 44, 131, 0.9)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .page-header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .page-header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Services Overview */
+        .services-overview {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 40px 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Services Detail */
+        .services-detail {
+            background: var(--light);
+        }
+        
+        .service-detail-card {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        .service-detail-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .service-detail-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-detail-card:hover .service-detail-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-detail-content {
+            flex: 1;
+        }
+        
+        .service-detail-content h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .service-cta {
+            margin-top: 30px;
+        }
+        
+        /* Process Section */
+        .process {
+            background: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: var(--secondary);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(74, 44, 131, 0.3);
+        }
+        
+        .step-content h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: var(--light);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+            border: none;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: var(--gradient-teal);
+            color: white;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 99;
+            text-decoration: none;
+            font-size: 1.8rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .service-detail-card,
+            .service-detail-card:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: all 0.4s ease;
+                z-index: 1;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            .nav-cta {
+                margin-top: 20px;
+                text-align: center;
+                display: block;
+            }
+            
+            .page-header {
+                height: 50vh;
+                margin-top: 70px;
+            }
+            
+            .page-header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-button {
+                bottom: 90px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    AAT <span>STUDIOS</span>
+                </div>
+                
+                <div class="mobile-toggle">☰</div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#consultation" class="nav-cta">Get Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Services</h1>
+                <p>Comprehensive architectural and design solutions tailored to your vision and needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>We provide a full range of architectural services from concept to completion.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Architecture</h3>
+                    <p>Innovative architectural designs that blend aesthetics with functionality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Animation</h3>
+                    <p>Realistic visualizations that bring your projects to life before construction.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>House Planning</h3>
+                    <p>Well-structured, space-efficient house plans tailored to your lifestyle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Beautiful and functional interior spaces that reflect your personality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Renovation</h3>
+                    <p>Breathing new life into existing spaces while preserving their character.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction</h3>
+                    <p>Quality construction services with meticulous attention to detail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="section services-detail">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Architecture">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Architecture</h3>
+                    <p>Our architectural services encompass everything from initial concept development to detailed construction documents. We specialize in creating innovative, sustainable designs that respond to their context and meet our clients' needs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Conceptual Design & Development</li>
+                        <li><i class="fas fa-check"></i> Sustainable & Green Building Design</li>
+                        <li><i class="fas fa-check"></i> Construction Documentation</li>
+                        <li><i class="fas fa-check"></i> Building Code Analysis</li>
+                        <li><i class="fas fa-check"></i> Site Analysis & Planning</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Start Your Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="3D Animation">
+                </div>
+                <div class="service-detail-content">
+                    <h3>3D Animation</h3>
+                    <p>Bring your projects to life with our photorealistic 3D visualizations and animations. We create immersive experiences that allow you to explore your space before construction begins.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Photorealistic 3D Renderings</li>
+                        <li><i class="fas fa-check"></i> Virtual Reality Walkthroughs</li>
+                        <li><i class="fas fa-check"></i> Animated Project Presentations</li>
+                        <li><i class="fas fa-check"></i> Material & Lighting Studies</li>
+                        <li><i class="fas fa-check"></i> Marketing & Presentation Materials</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Request Visualization</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="House Planning">
+                </div>
+                <div class="service-detail-content">
+                    <h3>House Planning</h3>
+                    <p>We design functional, efficient house plans tailored to your lifestyle. Our expertise in space planning ensures optimal flow and utilization of every square foot.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom Residential Design</li>
+                        <li><i class="fas fa-check"></i> Space Planning & Optimization</li>
+                        <li><i class="fas fa-check"></i> Zoning & Permit Assistance</li>
+                        <li><i class="fas fa-check"></i> Budget-conscious Design Solutions</li>
+                        <li><i class="fas fa-check"></i> Multi-family & Townhouse Planning</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Design Your Home</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Interior Design">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Interior Design</h3>
+                    <p>Our interior design services create harmonious environments that reflect your personality while maximizing functionality and comfort.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Space Planning & Layout Design</li>
+                        <li><i class="fas fa-check"></i> Material & Finish Selection</li>
+                        <li><i class="fas fa-check"></i> Custom Furniture Design</li>
+                        <li><i class="fas fa-check"></i> Lighting Design & Specification</li>
+                        <li><i class="fas fa-check"></i> Color Scheme Development</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Transform Your Space</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Renovation">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Renovation</h3>
+                    <p>Transform your existing space with our renovation services. We preserve the character of your property while updating it for modern living.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Existing Condition Assessment</li>
+                        <li><i class="fas fa-check"></i> Historic Preservation & Adaptive Reuse</li>
+                        <li><i class="fas fa-check"></i> Kitchen & Bathroom Remodels</li>
+                        <li><i class="fas fa-check"></i> Additions & Expansions</li>
+                        <li><i class="fas fa-check"></i> Building System Upgrades</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Renovate Your Space</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Construction">
+                </div>
+                <div class="service-detail-content">
+                    <h3>Construction</h3>
+                    <p>Our construction team delivers high-quality results on time and within budget, with meticulous attention to detail and craftsmanship.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Project Management & Coordination</li>
+                        <li><i class="fas fa-check"></i> Quality Control & Assurance</li>
+                        <li><i class="fas fa-check"></i> Budget Management</li>
+                        <li><i class="fas fa-check"></i> Contractor Selection & Management</li>
+                        <li><i class="fas fa-check"></i> Construction Administration</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="btn">Start Construction</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a structured approach to ensure your project's success from concept to completion.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Consultation</h4>
+                        <p>We begin by understanding your vision, needs, and budget to establish project goals.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Concept Design</h4>
+                        <p>We develop initial concepts and present design options for your review and feedback.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Development</h4>
+                        <p>We refine the chosen concept, develop detailed drawings and prepare for implementation.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Implementation</h4>
+                        <p>We oversee the construction phase, ensuring quality and adherence to the design vision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and process.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical architectural project take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The timeline varies based on project scope and complexity. A small residential project might take 3-6 months from concept to construction documents, while larger commercial projects can take 6-18 months or more. We provide detailed timelines during our initial consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your design philosophy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We believe in creating spaces that are not only beautiful but also functional, sustainable, and responsive to their context. Our approach combines innovative design with practical solutions that enhance the quality of life for our clients and their communities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work on projects outside of Lagos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we work on projects throughout Nigeria and internationally. We have experience managing remote projects through regular site visits, digital communication, and collaboration with local professionals when needed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is included in your service packages?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our service packages typically include initial consultation, concept development, design development, construction documents, and construction administration. Additional services like 3D visualization, interior design, and project management can be added based on your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today to discuss your architectural needs and how we can bring your vision to life.</p>
+            <a href="contact.html" class="btn btn-outline">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AAT Studios</h3>
+                    <p>We are a creative architecture studio specializing in modern design, 3D visualization, and construction services.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/2348135657443?text=Hello%20there"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aat_studios?igsh=MW52MHY1ZzBieWNqNg=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/oluwatobiloba-adebumiti-0aa036330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-info-circle"></i><a href="about.html">About Us</a></li>
+                        <li><i class="fas fa-concierge-bell"></i><a href="services.html">Services</a></li>
+                        <li><i class="fas fa-project-diagram"></i><a href="projects.html">Projects</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-drafting-compass"></i><a href="services.html">Architecture</a></li>
+                        <li><i class="fas fa-cube"></i><a href="services.html">3D Animation</a></li>
+                        <li><i class="fas fa-home"></i><a href="services.html">House Planning</a></li>
+                        <li><i class="fas fa-couch"></i><a href="services.html">Interior Design</a></li>
+                        <li><i class="fas fa-hard-hat"></i><a href="services.html">Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Remlec+Estate,+Lekki+Aja,+Lagos+State" target="_blank">Remlec Estate, Lekki Aja, Lagos State</a></li>
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+2348135657443">+2348135657443</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:aatstudios001@gmail.com">aatstudios001@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> AAT STUDIOS. All Rights Reserved. | Designed by Sefa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/2348135657443?text=Hello%20AAT%20Studios,%20I%20would%20like%20to%20discuss%20a%20project" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+                document.querySelector('.mobile-toggle').textContent = '☰';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '0';
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
