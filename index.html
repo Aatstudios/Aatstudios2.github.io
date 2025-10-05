@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAT STUDIOS | Architectural Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4A2C83; /* 99designs purple */
+            --secondary: #00C2B5; /* 99designs teal */
+            --accent: #FF6B6B; /* Coral accent */
+            --light: #F8F9FA;
+            --dark: #2D3748;
+            --gray: #718096;
+            --gradient: linear-gradient(135deg, #4A2C83 0%, #6B46C1 100%);
+            --gradient-teal: linear-gradient(135deg, #00C2B5 0%, #00D4B8 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(74, 44, 131, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-teal);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(74, 44, 131, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background: var(--gradient-teal);
+        }
+        
+        .btn-secondary::before {
+            background: var(--gradient);
+        }
+        
+        /* Enhanced Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            margin-left: 5px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(74, 44, 131, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            position: relative;
+            text-decoration: none;
+            color: var(--dark);
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 44, 131, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-teal);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .nav-cta:hover::before {
+            left: 0;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 44, 131, 0.3);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            z-index: 2;
+        }
+        
+        /* Header Animation Elements */
+        .header-decoration {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .decoration-1 {
+            top: -20px;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            bottom: -30px;
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.05;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(74, 44, 131, 0.85), rgba(74, 44, 131, 0.9)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient-teal);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 194, 181, 0.3);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-stats {
+            display: flex;
+            margin-top: 30px;
+            gap: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 40px 30px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .service-image-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .service-image-content {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            transform: translateY(50px);
+            transition: transform 0.5s ease;
+        }
+        
+        .service-image-overlay.active .service-image-content {
+            transform: translateY(0);
+        }
+        
+        .service-image-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .service-image-main {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .project-modal-content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.5s ease;
+        }
+        
+        .project-modal.active .project-modal-content {
+            transform: scale(1);
+        }
+        
+        .project-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .project-modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .team {
+            background: var(--light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(74, 44, 131, 0.15);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .member-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .member-popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 44, 131, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-member:hover .member-popup {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .testimonials .section-title h2 {
+            color: white;
+        }
+        
+        .testimonials .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .author-role {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .info-item:hover {
+            background: var(--light);
+            transform: translateX(10px);
+        }
+        
+        .info-item:hover .info-icon {
+            animation: bounce 0.5s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .info-text h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(74, 44, 131, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links li i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+            border: none;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: var(--gradient-teal);
+            color: white;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: all 0.4s ease;
+                z-index: 1;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            .nav-cta {
+                margin-top: 20px;
+                text-align: center;
+                display: block;
+            }
+            
+            .header-decoration {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .projects-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    AAT <span>STUDIOS</span>
+                </div>
+                
+                <div class="mobile-toggle">☰</div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#consultation" class="nav-cta">Get Consultation</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Decorative Elements -->
+                <div class="header-decoration decoration-1"></div>
+                <div class="header-decoration decoration-2"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Architectural Excellence Since 2016</span>
+                <h1>Crafted Spaces, Inspired Living</h1>
+                <p>At AAT STUDIOS, we blend creativity, innovation, and functionality to deliver architectural solutions that elevate everyday living.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View Our Work</a>
+                    <a href="#contact" class="btn btn-outline">Start a Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About AAT Studios</h2>
+                <p>We are passionate about designing spaces that go beyond structure—they tell stories, evoke emotion, and serve purpose.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Shaping Spaces, Elevating Experiences</h3>
+                    <p>At AAT STUDIOS, we are a forward-thinking architectural studio specializing in creating modern, functional, and sustainable environments. Our approach is rooted in curiosity, creativity, and collaboration.</p>
+                    <p>From residential homes to commercial spaces, we combine artistic vision with technical expertise to deliver design solutions that are as practical as they are inspiring.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">7+</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-text">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">35+</div>
+                            <div class="stat-text">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About AAT Studios">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of architectural and design services to bring your vision to life.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="architecture">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Architecture</h3>
+                    <p>We craft architectural designs that blend innovation, functionality, and aesthetic appeal.</p>
+                </div>
+                <div class="service-card" data-service="3d-animation">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Animation</h3>
+                    <p>Our realistic 3D visualizations bring your projects to life before construction begins.</p>
+                </div>
+                <div class="service-card" data-service="house-planning">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>House Planning</h3>
+                    <p>We design well-structured, space-efficient house plans for your lifestyle needs.</p>
+                </div>
+                <div class="service-card" data-service="interior-design">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>From concept to detail, our interior designs enhance the feel and flow of each space.</p>
+                </div>
+                <div class="service-card" data-service="renovation">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Renovation</h3>
+                    <p>We breathe new life into existing spaces while preserving their core character.</p>
+                </div>
+                <div class="service-card" data-service="construction">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction</h3>
+                    <p>Built on quality and integrity, our construction services deliver precise results.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Image Overlay -->
+        <div class="service-image-overlay">
+            <div class="service-image-content">
+                <div class="service-image-close">&times;</div>
+                <img class="service-image-main" src="" alt="Service Image">
+                <h3 id="service-image-title">Service Title</h3>
+                <p id="service-image-description">Service description will appear here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Projects</h2>
+                <p>Explore our portfolio of completed projects that showcase our commitment to excellence.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-project="modern-villa">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Villa">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Residential</span>
+                        <h3>Modern Villa</h3>
+                        <p>Ikoyi, Lagos State</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="office-complex">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Office Complex">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Commercial</span>
+                        <h3>Office Complex</h3>
+                        <p>Victoria Island, Lagos</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="luxury-apartment">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Apartment">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Interior Design</span>
+                        <h3>Luxury Apartment</h3>
+                        <p>Lekki, Lagos State</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Modal -->
+        <div class="project-modal">
+            <div class="project-modal-content">
+                <div class="project-modal-close">&times;</div>
+                <img class="project-modal-image" src="" alt="Project Image">
+                <h3 id="project-modal-title">Project Title</h3>
+                <div id="project-modal-details">
+                    <p>Project details will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>Meet our talented team of architects and designers dedicated to bringing your vision to life.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Adebumiti Oluwatobiloba">
+                    </div>
+                    <div class="member-info">
+                        <h3>Adebumiti Oluwatobiloba</h3>
+                        <div class="member-role">CEO & Principal Architect</div>
+                        <p>With over 7 years of experience, Tobi leads our design vision and ensures every project meets our high standards.</p>
+                    </div>
+                    <div class="member-popup">
+                        <h3>Adebumiti Oluwatobiloba</h3>
+                        <p>Specializes in sustainable architecture and innovative design solutions. Holds a Master's in Architecture from the University of Lagos.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nimah Inuwa">
+                    </div>
+                    <div class="member-info">
+                        <h3>Nimah Inuwa</h3>
+                        <div class="member-role">Interior Designer</div>
+                        <p>Nimah specializes in creating functional and beautiful interior spaces that reflect our clients' personalities.</p>
+                    </div>
+                    <div class="member-popup">
+                        <h3>Nimah Inuwa</h3>
+                        <p>Expert in contemporary interior design with a focus on ergonomics and aesthetic harmony. Graduate of the prestigious Design Academy.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Akintola Richard">
+                    </div>
+                    <div class="member-info">
+                        <h3>Akintola Richard</h3>
+                        <div class="member-role">Project Manager</div>
+                        <p>Richard ensures all projects are delivered on time, within budget, and to the highest quality standards.</p>
+                    </div>
+                    <div class="member-popup">
+                        <h3>Akintola Richard</h3>
+                        <p>Certified Project Management Professional with 10+ years experience in architectural project coordination and execution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with AAT Studios.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "AAT STUDIOS brought our vision to life with precision and elegance. From 3D animations to interior layouts, their team demonstrated exceptional professionalism."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="James Clinton">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Clinton</h4>
+                            <div class="author-role">Estate Development Client</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Working with AAT STUDIOS was a game changer for our residential project. Their creativity, attention to detail, and modern design approach exceeded our expectations."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <div class="author-role">Residential Client</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "We needed a complete renovation and AAT STUDIOS delivered beyond what we imagined. Their project management was seamless, and the final result reflects both function and style."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Michael Brown">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Brown</h4>
+                            <div class="author-role">Commercial Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to discuss your next architectural project.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item" onclick="window.open('https://maps.google.com/?q=Remlec+Estate,+Lekki+Aja,+Lagos+State', '_blank')">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Address</h3>
+                            <p>Remlec Estate, Lekki Aja, Lagos State</p>
+                        </div>
+                    </div>
+                    <div class="info-item" onclick="window.open('tel:+2348135657443')">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Phone</h3>
+                            <p>+2348135657443</p>
+                        </div>
+                    </div>
+                    <div class="info-item" onclick="window.open('mailto:aatstudios001@gmail.com')">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Email</h3>
+                            <p>aatstudios001@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9am - 6pm</p>
+                            <p>Saturday: 10am - 4pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AAT Studios</h3>
+                    <p>We are a creative architecture studio specializing in modern design, 3D visualization, and construction services.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/2348135657443?text=Hello%20there"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aat_studios?igsh=MW52MHY1ZzBieWNqNg=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/oluwatobiloba-adebumiti-0aa036330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-home"></i><a href="#home">Home</a></li>
+                        <li><i class="fas fa-info-circle"></i><a href="#about">About Us</a></li>
+                        <li><i class="fas fa-concierge-bell"></i><a href="#services">Services</a></li>
+                        <li><i class="fas fa-project-diagram"></i><a href="#projects">Projects</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-drafting-compass"></i><a href="#services">Architecture</a></li>
+                        <li><i class="fas fa-cube"></i><a href="#services">3D Animation</a></li>
+                        <li><i class="fas fa-home"></i><a href="#services">House Planning</a></li>
+                        <li><i class="fas fa-couch"></i><a href="#services">Interior Design</a></li>
+                        <li><i class="fas fa-hard-hat"></i><a href="#services">Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Remlec+Estate,+Lekki+Aja,+Lagos+State" target="_blank">Remlec Estate, Lekki Aja, Lagos State</a></li>
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+2348135657443">+2348135657443</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:aatstudios001@gmail.com">aatstudios001@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> AAT STUDIOS. All Rights Reserved. | Designed by Sefa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+            this.textContent = this.textContent === '☰' ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+                document.querySelector('.mobile-toggle').textContent = '☰';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '5px 0';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '0';
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Service Cards - Show image overlay
+        const serviceCards = document.querySelectorAll('.service-card');
+        const serviceOverlay = document.querySelector('.service-image-overlay');
+        const serviceImage = document.querySelector('.service-image-main');
+        const serviceTitle = document.getElementById('service-image-title');
+        const serviceDescription = document.getElementById('service-image-description');
+        const serviceClose = document.querySelector('.service-image-close');
+
+        const serviceData = {
+            'architecture': {
+                image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: 'Architecture',
+                description: 'Our architectural services encompass everything from initial concept development to detailed construction documents. We specialize in creating innovative, sustainable designs that respond to their context and meet our clients\' needs.'
+            },
+            '3d-animation': {
+                image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: '3D Animation',
+                description: 'Bring your projects to life with our photorealistic 3D visualizations and animations. We create immersive experiences that allow you to explore your space before construction begins.'
+            },
+            'house-planning': {
+                image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: 'House Planning',
+                description: 'We design functional, efficient house plans tailored to your lifestyle. Our expertise in space planning ensures optimal flow and utilization of every square foot.'
+            },
+            'interior-design': {
+                image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: 'Interior Design',
+                description: 'Our interior design services create harmonious environments that reflect your personality while maximizing functionality and comfort.'
+            },
+            'renovation': {
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: 'Renovation',
+                description: 'Transform your existing space with our renovation services. We preserve the character of your property while updating it for modern living.'
+            },
+            'construction': {
+                image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                title: 'Construction',
+                description: 'Our construction team delivers high-quality results on time and within budget, with meticulous attention to detail and craftsmanship.'
+            }
+        };
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceType = this.getAttribute('data-service');
+                const data = serviceData[serviceType];
+                
+                serviceImage.src = data.image;
+                serviceTitle.textContent = data.title;
+                serviceDescription.textContent = data.description;
+                
+                serviceOverlay.classList.add('active');
+            });
+        });
+
+        serviceClose.addEventListener('click', function() {
+            serviceOverlay.classList.remove('active');
+        });
+
+        // Project Cards - Show modal
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectModal = document.querySelector('.project-modal');
+        const projectModalImage = document.querySelector('.project-modal-image');
+        const projectModalTitle = document.getElementById('project-modal-title');
+        const projectModalDetails = document.getElementById('project-modal-details');
+        const projectModalClose = document.querySelector('.project-modal-close');
+
+        const projectData = {
+            'modern-villa': {
+                image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                title: 'Modern Villa - Ikoyi',
+                details: `
+                    <p>This stunning modern villa in Ikoyi showcases our commitment to contemporary design with clean lines, open spaces, and seamless indoor-outdoor living.</p>
+                    <h4>Project Details:</h4>
+                    <ul>
+                        <li>Location: Ikoyi, Lagos State</li>
+                        <li>Size: 4500 sq ft</li>
+                        <li>Completion: March 2023</li>
+                        <li>Services: Architecture, Interior Design, Construction Management</li>
+                    </ul>
+                    <p>The project features innovative use of natural materials and strategic placement to maximize natural light and ventilation. The open-plan living areas flow seamlessly to the outdoor entertainment spaces, creating a perfect balance between luxury and comfort.</p>
+                `
+            },
+            'office-complex': {
+                image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                title: 'Office Complex - Victoria Island',
+                details: `
+                    <p>This state-of-the-art office complex in Victoria Island was designed to promote collaboration and productivity while maintaining a sophisticated corporate aesthetic.</p>
+                    <h4>Project Details:</h4>
+                    <ul>
+                        <li>Location: Victoria Island, Lagos</li>
+                        <li>Size: 12,000 sq ft</li>
+                        <li>Completion: January 2023</li>
+                        <li>Services: Architecture, Interior Design, Project Management</li>
+                    </ul>
+                    <p>The design incorporates flexible workspaces, modern meeting facilities, and employee wellness areas. Sustainable features include energy-efficient lighting, water conservation systems, and ample natural ventilation.</p>
+                `
+            },
+            'luxury-apartment': {
+                image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                title: 'Luxury Apartment - Lekki',
+                details: `
+                    <p>This luxury apartment interior design project transformed a standard unit into a sophisticated urban sanctuary with custom finishes and bespoke furniture.</p>
+                    <h4>Project Details:</h4>
+                    <ul>
+                        <li>Location: Lekki, Lagos State</li>
+                        <li>Size: 1800 sq ft</li>
+                        <li>Completion: November 2022</li>
+                        <li>Services: Interior Design, Custom Furniture, Lighting Design</li>
+                    </ul>
+                    <p>The design features a neutral color palette with strategic pops of color, custom-built storage solutions, and carefully curated artwork. The open-plan layout maximizes the sense of space while creating distinct functional zones.</p>
+                `
+            }
+        };
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const projectType = this.getAttribute('data-project');
+                const data = projectData[projectType];
+                
+                projectModalImage.src = data.image;
+                projectModalTitle.textContent = data.title;
+                projectModalDetails.innerHTML = data.details;
+                
+                projectModal.classList.add('active');
+            });
+        });
+
+        projectModalClose.addEventListener('click', function() {
+            projectModal.classList.remove('active');
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name') || document.querySelector('#contactForm input[type="text"]').value;
+            const email = formData.get('email') || document.querySelector('#contactForm input[type="email"]').value;
+            const subject = formData.get('subject') || document.querySelector('#contactForm input[placeholder="Subject"]').value;
+            const message = formData.get('message') || document.querySelector('#contactForm textarea').value;
+            
+            // In a real implementation, you would send this data to your server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you for your message, ${name}! We will get back to you soon at ${email}.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
